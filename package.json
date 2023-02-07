@@ -1,7 +1,7 @@
 {
   "name": "mysql-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api com node acessando o MySql",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,9 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mysql2": "^3.1.1"
+    "mysql2": "^3.1.1",
+    "sequelize": "^6.28.0"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gropp/mysql-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gropp/mysql-node/issues"
+  },
+  "homepage": "https://github.com/Gropp/mysql-node#readme"
 }
