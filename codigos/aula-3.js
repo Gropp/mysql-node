@@ -7,11 +7,11 @@ const User = db.User;
 // criacao de um objeto com as propriedades da tabela
 function criarUser() {
     User.create({
-        firstName: 'Fernando Francisco',
+        firstName: 'Henrique Samaniego',
         lastName: 'Gropp',
-        cpf: '111222333-0',
-        rg: '1.222.333-0',
-        email: 'gropp@gmail.com'
+        cpf: '111222333-1',
+        rg: '1.222.333-1',
+        email: 'henrique@gmail.com'
     }).then(userCriado => console.log(userCriado));
 }
 //criarUser();
@@ -43,4 +43,4 @@ function deletarUser(id) {
     }).then(userDeletado => console.log(userDeletado));
 }
 
-deletarUser(1);
+//deletarUser(1);
