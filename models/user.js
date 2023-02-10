@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // esse atributo funciona quando fazemos select no endereço e ele traz a pessoa vinculada
+      User.hasOne(models.Address, {foreignKey: 'userid' })
     }
   }
   User.init({
