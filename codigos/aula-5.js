@@ -2,6 +2,7 @@
 const { json } = require('sequelize');
 const db = require('../models/index');
 //para buscas mais refinadas o sequelize oferece uma biblioteca de operadores
+//a biblioteca dos operadores é Sequelize com S maiusculo
 const Op = db.Sequelize.Op;
 //carrego somente a table User do banco
 const User = db.User;
