@@ -19,13 +19,16 @@ async function addTelephone(phone) {
 // })
 
 // funcao para fazer select nos telefones com clausula where fazendo um join em Telephone
-async function findUserTelephones(userId) {
+async function findUserTelephones(userId, phoneId) {
     const user = await User.findOne({
         where: {id: userId},
         include:[
         // fazendo join com telefone
         {
-            model: Telephone
+            model: Telephone,
+            // é possivel filtar dentro do modelo
+            // por exemplo só o telefone celular
+            where:{id: phoneId}
         },
         // fazendo join com endereço
         {
@@ -38,4 +41,4 @@ async function findUserTelephones(userId) {
     console.log(JSON.parse(JSON.stringify(user)))
 }
 
-findUserTelephones(3)
+findUserTelephones(3,1)
