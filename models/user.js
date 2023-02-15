@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const telephone = require('./telephone');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -12,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       // esse atributo funciona quando fazemos select no endereço e ele traz a pessoa vinculada
+      // quando uma pessoa pode ter somente um endereço 1-1 - retorna um objeto
       User.hasOne(models.Address, {foreignKey: 'userid' })
+      // quando uma pessoa pode ter varios telefones 1-n - retorna um array
+      User.hasMany(models.Telephone, {foreignKey: 'userid'})
     }
   }
   User.init({

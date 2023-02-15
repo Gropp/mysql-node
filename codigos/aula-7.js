@@ -10,13 +10,13 @@ async function addAddress(address) {
 }
 
 // addAddress({
-//     street_avenue: 'Rua Campinas, 000',
-//     complement: 'Apartamento',
+//     street_avenue: 'Rua Piracicaba, 000',
+//     complement: 'Sobrado',
 //     city: 'Curitiba',
 //     state: 'Paraná',
-//     zipcode: '11.999-000',
+//     zipcode: '22.888-000',
 //     country: 'Brazil',
-//     userid: 1,
+//     userid: 3,
 // })
 
 //SELECT PARA PROCURAR ENDERECO POR ID E TRAZER O USER
@@ -77,4 +77,4 @@ async function searchAllUserIdAdress() {
     console.log(userAddress)
 }
 
-searchAllUserIdAdress()
+//searchAllUserIdAdress()
