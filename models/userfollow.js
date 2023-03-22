@@ -14,9 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       // definido na tabela user.js
     }
   }
-  UserFollow.init({}, {
+  UserFollow.init({
+    userid: DataTypes.INTEGER,
+    userFollowid: DataTypes.INTEGER
+  }, {
     sequelize,
+    // se nao colocar o tableName, sequelize utiliza o modelName e coloca um s no final. Tem que verificar o nome da tabela na migration e no BD
     modelName: 'UserFollow',
+    tableName: 'UserFollows'
   });
   return UserFollow;
 };

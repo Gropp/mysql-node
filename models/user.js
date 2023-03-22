@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Address, {foreignKey: 'userid' })
       // quando uma pessoa pode ter varios telefones 1-n - retorna um array
       User.hasMany(models.Telephone, {foreignKey: 'userid'})
+      // pessoas seguindo n pessoas e sendo seguido por n pessoas
+      // seguindo
+      User.belongsToMany(User, {through: 'UserFollows', foreignKey: 'userid', as: 'follows'});
+      // é seguido
+      User.belongsToMany(User, {through: 'UserFollows', foreignKey: 'userFollowid', as:'followed'});
+      // como as chaves estao na mesma tabela é preciso usar um alias para diferenciar os campos alem de mudar a referencia da chave estrangeira
     }
   }
   User.init({
